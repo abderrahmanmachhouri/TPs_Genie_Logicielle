@@ -28,22 +28,22 @@
 ## 📂 Structure
 ```
 TPs_Genie_Logicielle/
-├── TP1_Monolithe_Simple/          # API monolithique simple
-├── TP1_Monolithe_Simple_Exercice/ # + entité Category (ManyToOne)
-├── TP2_monolithe_modulaire/       # Version modulaire + DTOs
-│   └── monolith/
+├── TP1_Monolithe/                 # API monolithique simple + exercice Category
+├── TP2_monolithe_modulaire/
+│   └── monolith/                  # Version modulaire + DTOs
 │       ├── product/               # Module produits
 │       ├── customer/              # Module clients
 │       └── order/                 # Module commandes
-├── tp-archi-distribuee/           # Système distribué (6 composants)
+├── TP3_architecture_distribuee/   # Système distribué (6 composants)
 │   ├── docker-compose.yml
 │   ├── nginx/
 │   └── app/
-└── TP4_SOA/                       # Architecture orientée services
-    ├── eureka-server/             # Service de découverte (port 8761)
-    ├── product-service/           # Gestion produits (port 8081)
-    ├── order-service/             # Gestion commandes (port 8082)
-    └── api-gateway/               # Point d'entrée unique (port 8080)
+├── TP4_soa_ecommerce/             # Architecture orientée services
+│   ├── eureka-server/             # Service de découverte (port 8761)
+│   ├── product-service/           # Gestion produits (port 8081)
+│   ├── order-service/             # Gestion commandes (port 8082)
+│   └── api-gateway/               # Point d'entrée unique (port 8080)
+└── TPs_GL_Enoncé.pdf              # Énoncé des travaux pratiques
 ```
 
 ---
@@ -75,16 +75,16 @@ docker-compose up --build
 ### TP4 — Ordre obligatoire
 ```bash
 # 1. Eureka Server
-cd eureka-server && mvn spring-boot:run
+cd TP4_soa_ecommerce/eureka-server && mvn spring-boot:run
 
 # 2. Product Service
-cd product-service && mvn spring-boot:run
+cd TP4_soa_ecommerce/product-service && mvn spring-boot:run
 
 # 3. Order Service
-cd order-service && mvn spring-boot:run
+cd TP4_soa_ecommerce/order-service && mvn spring-boot:run
 
 # 4. API Gateway
-cd api-gateway && mvn spring-boot:run
+cd TP4_soa_ecommerce/api-gateway && mvn spring-boot:run
 ```
 
 ---
